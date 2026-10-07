@@ -1,0 +1,105 @@
+export default {
+  name: 'review',
+  title: 'Patient Reviews & Testimonials',
+  type: 'document',
+  fields: [
+    {
+      name: 'name',
+      title: 'Patient Name',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      description: 'e.g. Lady Victoria C.',
+    },
+    {
+      name: 'username',
+      title: 'Handle / Alias',
+      type: 'string',
+      initialValue: '@victoria.c',
+    },
+    {
+      name: 'location',
+      title: 'Patient Location',
+      type: 'string',
+      initialValue: 'Kensington, London',
+    },
+    {
+      name: 'procedure',
+      title: 'Procedure Name',
+      type: 'string',
+      description: 'e.g. Deep Plane SMAS Facelift',
+    },
+    {
+      name: 'category',
+      title: 'Category Tag',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Surgical', value: 'surgical' },
+          { title: 'Injectables', value: 'injectables' },
+          { title: 'Skin', value: 'skin' },
+          { title: 'Body', value: 'body' },
+        ],
+      },
+    },
+    {
+      name: 'doctor',
+      title: 'Attending Practitioner',
+      type: 'string',
+      initialValue: 'Dr. Julian Vance',
+    },
+    {
+      name: 'rating',
+      title: 'Rating (1 to 5)',
+      type: 'number',
+      initialValue: 5,
+    },
+    {
+      name: 'date',
+      title: 'Date of Review',
+      type: 'string',
+      initialValue: 'February 2026',
+    },
+    {
+      name: 'avatar',
+      title: 'Patient Avatar / Photo',
+      type: 'image',
+      options: { hotspot: true },
+    },
+    {
+      name: 'avatarUrl',
+      title: 'External Avatar URL (Optional)',
+      type: 'url',
+    },
+    {
+      name: 'body',
+      title: 'Short Review Body',
+      type: 'text',
+      rows: 3,
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'detailedQuote',
+      title: 'Full Extended Testimonial',
+      type: 'text',
+      rows: 4,
+    },
+    {
+      name: 'verified',
+      title: 'Verified Patient Badge',
+      type: 'boolean',
+      initialValue: true,
+    },
+    {
+      name: 'order',
+      title: 'Display Order',
+      type: 'number',
+      initialValue: 1,
+    },
+    {
+      name: 'clinic',
+      title: 'Belongs to Clinic (Optional)',
+      type: 'reference',
+      to: [{ type: 'clinic' }],
+    },
+  ],
+};
