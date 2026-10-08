@@ -16,6 +16,7 @@ import ConsultationJourney from './components/ConsultationJourney';
 import BookingSection from './components/BookingSection';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
+import WhatsAppFloatButton from './components/WhatsAppFloatButton';
 
 export default function App() {
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
@@ -112,6 +113,8 @@ export default function App() {
         </main>
 
         <Footer />
+
+        <WhatsAppFloatButton />
 
         <BookingModal
           isOpen={bookingModalOpen}
